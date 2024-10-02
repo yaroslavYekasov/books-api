@@ -9,4 +9,8 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-//test
+
+// Обработка 404
+app.use((req, res, next) => {
+    res.status(404).send('Page Not Found');
+  });
